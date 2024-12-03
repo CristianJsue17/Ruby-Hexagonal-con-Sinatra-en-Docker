@@ -1,0 +1,104 @@
+<h1>Subir Producto</h1>
+<% if @confirmation_message %>
+  <div class="alert alert-success" id="alert-success">
+    <%= @confirmation_message %>
+  </div>
+<% end %>
+<div class="form-container">
+  <form action="/admin/products/create" method="post" enctype="multipart/form-data">
+    <div class="form-columns">
+        <div class="form-column">
+            <div class="form-group">
+                <label>Nombre del producto</label>
+                <input type="text" name="product[name]">
+            </div>
+            <div class="form-group">
+                <label>Descripcion</label>
+                <input type="text" name="product[description]">
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="number" name="product[price]">
+            </div>
+            <div class="form-group">
+                <label>Categoria</label>
+                <input type="text" name="product[category]">
+            </div>
+            <div class="form-group">
+                <label>Marca</label>
+                <input type="text" name="product[brand]">
+            </div>
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="number" value="0" name="product[stock]">
+            </div>
+        </div>
+        <div class="form-colum">
+            <div class="form-group">
+                <label for="">Material</label>
+                <input type="text" name="product[material]">
+            </div>
+            <div class="form-group">
+                <label for="">Dimensión</label>
+                <input type="text" name="product[dimension]">
+            </div>
+            <div class="form-group">
+                <label for="">Peso</label>
+                <input type="text" name="product[peso]">
+            </div>
+            <div class="form-group">
+                <label for="">Color</label>
+                <input type="text" name="product[color]">
+            </div>
+            <div class="form-group">
+                <label for="">Caracteristicas</label>
+                <textarea name="product[caracteristicas]">algo aqui</textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Imagen del producto</label>
+                <input type="file" name="product[image]">
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Subir Producto" class="submit-button">
+  </form>
+</div>
+
+<div class="nav-links">
+  <a href="/">Volver a inicio</a>
+  <a href="/auth/logout" class="logout-button">Cerrar sesion</a>
+</div>
+
+<h2>Productos Subidos</h2>
+<% @products_by_category.each do |category, products| %>
+    <div class="category-header">
+        <%= category.capitalize %>
+    </div>
+    <ul class="products-grid">
+        <% products.each do |product| %>
+            <li class="product-item">
+                <% if product.image %>
+                    <img src="<%= product.image.url %>" alt="" class="product-image">
+                <% else %>
+                    <div class="image-placeholder">
+                        Sin imagen
+                    </div>
+                <% end %>
+                <div class="product-details">
+                    <p><strong>Nombre:</strong> <%= product.name %></p>
+                    <p><strong>Precio:</strong> S/<%= product.price %></p>
+                    <p><strong>Material:</strong> <%= product.material %></p>
+                    <p><strong>Dimensión:</strong> <%= product.dimension %></p>
+                    <p><strong>Peso:</strong> <%= product.peso %></p>
+                    <p><strong>Color:</strong> <%= product.color %></p>
+                    <p><strong>Características:</strong> <%= product.caracteristicas %></p>
+                </div>
+                <div>
+                    <a href="/admin/products/edit/<%= product.id %>" class="edit-link">Editar</a>
+                    <button class="delete-button" data-product-id="<%= product.id %>" >Eliminar</button>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+
+<% end %>

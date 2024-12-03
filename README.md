@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+bundle exec rerun --background -- ruby main.rb // desarrollo
+ruby main.rb // produccion

@@ -91,8 +91,9 @@
           <%= link_to 'Editar', edit_products_upload_path(product), class: 'edit-link' %>
 
           <%= form_with(model: product, url: delete_products_upload_path(product), method: :delete, local: true) do %>
-  <%= submit_tag 'Eliminar', data: { confirm: '¿Estás seguro de que deseas eliminar este producto?' }, class: 'delete-button' %>
-<% end %>
+          <%= submit_tag 'Eliminar', data: { confirm: '¿Estás seguro de que deseas eliminar este producto?' }, class: 'delete-button' %>  
+          <% end %>
+
         </div>
       </li>
     <% end %>

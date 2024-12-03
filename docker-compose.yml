@@ -17,11 +17,11 @@ services:
   # Servicio de aplicación web Rails
   web:
     build: .                        # Construye la imagen usando el Dockerfile en la raíz del proyecto
-    command: bash -c "rm -f tmp/pids/server.pid && rails server -b '0.0.0.0'"
+    command: bundle exec rerun --background -- ruby main.rb # Comando para iniciar la aplicación sinatra
     volumes:
       - .:/usr/src/app              # Monta el código fuente en el contenedor
     ports:
-      - "3001:3000"                 # Puerto expuesto para acceder a la aplicación Rails desde el host
+      - "4568:4567"                 # Puerto expuesto para acceder a la aplicación Rails desde el host
     depends_on:
       - db                          # Asegura que PostgreSQL esté listo antes de iniciar Rails
     environment:
@@ -29,6 +29,7 @@ services:
       DATABASE_USERNAME: cristian    # Usuario de PostgreSQL
       DATABASE_PASSWORD: cristian    # Contraseña de PostgreSQL
       DATABASE_NAME: compufiis_development # Nombre de la base de datos
+      RERUN_NO_STTY: '1'          # Evita problemas con la terminal al usar rerun
     networks:
       - app-network                 # Red compartida con el servicio de PostgreSQL
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    
+    <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/category.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/products.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/custom.css">
+</head>
+<body>
+    <div class="welcome-bar">
+        Bienvenidos a CompuFIIS, mejores marcas a precio locura!
+    </div>
+    <header>
+        <div class="navbar">
+            <!-- Logo en forma circular con texto COMPUFIIS al lado -->
+            <div class="logo-circle">
+
+                <a href="/">
+                    <img src="/images/logoCompufiis.png" alt="Logo CompuFIIS" class="logo-img">
+                </a>
+                <span>COMPUFIIS</span>
+            </div>
+            <!-- Navegación principal -->
+            <nav>
+                <a href="/category/laptops">Laptops</a>
+                <a href="/category/computadoras">Computadoras</a>
+                <a href="/category/celulares">Celulares</a>
+                <a href="/category/accesorios">Accesorios</a>
+            </nav>
+            <!-- Iconos de Carrito de Compras y Login -->
+            <div class="icons">
+                <button class="cart-icon" title="Carrito de Compras" id="button-cart">
+                  <div class="cart-circle">
+                    <span class="">&#128722;</span>
+                  </div>
+                </button>
+                <a href="/login/new" class="login-icon" title="Login Usuario">
+                    <div class="login-circle">
+                        <span class="login">&#128100;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <div class="company-info">
+        <p>Todos los derechos reservados © 2024 CompuFiss</p>
+        <p>Contacto: correo@compufiis.com | Teléfono: +51 123 456 789</p>
+        <a href="/privacy-policy">Política de Privacidad</a> | <a href="/terms">Términos de Servicio</a>
+      </div>
+    </footer>
+    <!-- Carrito deslizante -->
+    <div id="cart-overlay" class="cart-overlay">
+      <div class="cart-container" id="cart-container">
+        <div class="cart-header">
+          <h2>Carrito de compra</h2>
+          <button class="close-cart" id="close-cart">✕</button>
+        </div>
+        <div class="cart-body">
+          <div id="cart-items" class="cart-items">
+          <!-- Aquí se agregarán los productos del carrito -->
+            <div class="cart-item">
+              <div class="img">
+                <img src="" alt="">
+              </div>
+              <div class="info">
+                <h3>mac m1</h3>
+                <p>$1000</p>
+                <button>eliminar</button>
+              </div>
+            </div>
+            <p id="empty-cart-message">No hay productos en el carrito.</p>
+          </div>
+        </div>
+        
+        <div class="cart-footer">
+          <button id="continue-shopping">Seguir comprando</button>
+          <button id="checkout">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,6 +1,25 @@
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+# require 'active_record'
+# require 'rake'
 
-require_relative "config/application"
+# namespace :db do
+#   desc 'Migrate the database'
+#   task :migrate => :environment do
+#     ActiveRecord::Base.establish_connection(
+#       adapter: 'postgresql',
+#       host: 'test-fiis-db-1',
+#       database: 'compufiis_development',
+#       username: 'cristian',
+#       password: 'cristian'
+#     )
 
-Rails.application.load_tasks
+#     migration_context = ActiveRecord::MigrationContext.new('app/dbs/migrate', ActiveRecord::SchemaMigration)
+#     migration_context.migrate
+#   end
+
+#   task :environment do
+
+#   end
+# end
+
+require 'sinatra/activerecord/rake'
+require './main'  # tu archivo principal de la aplicación

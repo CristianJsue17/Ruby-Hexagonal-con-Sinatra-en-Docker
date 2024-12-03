@@ -31,7 +31,7 @@ class CartController < ApplicationController
         price: item.product.price,
         quantity: item.quantity,
         total_price: item.product.price * item.quantity,
-        image_url: url_for(item.product.image) if item.product.image.attached?
+        # image_url: url_for(item.product.image) if item.product.image.attached?
       }
     end
 
