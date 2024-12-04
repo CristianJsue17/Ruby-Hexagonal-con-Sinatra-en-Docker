@@ -1,16 +1,47 @@
 window.onload = function () {
-  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    let cartItems =  localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[]
   let open_cart_button = document.getElementById("button-cart");
   let sideCart = document.getElementById("cart-overlay");
   let close_cart_button = document.getElementById("close-cart");
   let addProductButton = document.getElementById("add-to-cart-button");
   let quantitySelect = document.getElementById("product-quantity"); 
   let alertSuccess = document.getElementById("alert-success")
+  let notification = document.getElementById('notification')
+
+  let noticeLocalItem = localStorage.getItem("notice")
+  // crea la notificacion
+  if(notification && noticeLocalItem){
+      let notice = JSON.parse(noticeLocalItem)
+      let div = document.createElement("div")
+      div.classList.add("alert")
+      div.classList.add("alert-success")
+      div.textContent = notice.message
+      notification.append(div);
+      localStorage.removeItem("notice")
+  }
+
+  // eliminar las notificaciones
+
+  if(notification){
+      console.log("la notificacion",notification)
+      setTimeout(()=>{
+          if(notification.hasChildNodes()){
+              while(notification.firstChild){
+                  notification.removeChild(notification.firstChild)
+              }
+              localStorage.removeItem("notice")
+              console.log("todas la notidicaciones han sido eliminados")
+          }else{
+              console.log("no hay notificaciones")
+          }
+      },1000)
+  }
 
   if(alertSuccess){
     setTimeout(()=>{
       console.log("se eliminara el succes alert")
-      // eliminar el alert 
+      // eliminar el alert
       alertSuccess.remove()
 
     },1000)
@@ -47,6 +78,7 @@ window.onload = function () {
   }
 
   open_cart_button.addEventListener("click", function () {
+      console.log("doy click")
     // aqui cambiamos la clase de la barra del carrito open close
     sideCart.classList.toggle("open");
   });
@@ -57,6 +89,7 @@ window.onload = function () {
   if (addProductButton && quantitySelect) {
     addProductButton.addEventListener("click", function (event) {
       let productId = event.target.dataset.productId;
+      console.log("los productos",cartItems)
       let productFound = cartItems.find((item) => item.id == productId);
       if (productFound) {
 
@@ -94,10 +127,11 @@ window.onload = function () {
 };
 
 function add_product_to_card(cartItems,setCartItems,getCartItems) {
-  console.log("setCartItems",setCartItems);
+    console.log("se ejecuta esta funcion")
   let cartContainer = document.getElementById("cart-items");
   // limpiar carContainer
   cartContainer.innerHTML = "";
+  console.log("antes de hacer el forEach",cartItems)
   cartItems.forEach((item) => {
     let divImg = document.createElement("div");
     divImg.classList.add("img");

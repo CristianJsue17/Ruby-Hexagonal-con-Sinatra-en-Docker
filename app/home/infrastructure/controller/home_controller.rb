@@ -31,8 +31,8 @@ class HomeController < Sinatra::Base
         erb :index, layout: :'layouts/application'
     end
 
-    get '/not_found' do
-      "Not found"
+    get '/carts' do
+        erb :carts
     end
     
 end

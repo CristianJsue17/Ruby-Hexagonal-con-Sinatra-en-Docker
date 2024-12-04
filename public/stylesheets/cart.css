@@ -1,0 +1,5 @@
+#cart-items .cart-item .cart-item-header img{
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+}

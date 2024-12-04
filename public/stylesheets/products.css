@@ -161,9 +161,9 @@
   display: flex;
   gap: 20px;
 }
-.alert.alert-success{
-  background: #27ac4c;
-  padding: 1rem;
-  color: white;
-  margin-bottom: 1rem;
-}
+/*.alert.alert-success{*/
+/*  background: #27ac4c;*/
+/*  padding: 1rem;*/
+/*  color: white;*/
+/*  margin-bottom: 1rem;*/
+/*}*/

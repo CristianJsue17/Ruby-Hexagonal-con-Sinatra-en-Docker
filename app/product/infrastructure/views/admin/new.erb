@@ -1,9 +1,12 @@
 <h1>Subir Producto</h1>
-<% if @confirmation_message %>
-  <div class="alert alert-success" id="alert-success">
-    <%= @confirmation_message %>
-  </div>
-<% end %>
+
+<div id = "notification">
+  <% if @confirmation_message %>
+    <div class="alert alert-success" id="alert-success">
+      <%= @confirmation_message %>
+    </div>
+  <% end %>
+</div>
 <div class="form-container">
   <form action="/admin/products/create" method="post" enctype="multipart/form-data">
     <div class="form-columns">
