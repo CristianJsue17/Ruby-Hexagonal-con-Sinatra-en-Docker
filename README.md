@@ -1,27 +1,5 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-bundle exec rerun --background -- ruby main.rb // desarrollo
-ruby main.rb // produccion
+http://localhost:4568/admin/products/create/new para crear un producto
+http://localhost:4568/  para el home
+http://localhost:4568/category/laptops para categorias
+http://localhost:4568/login/new para el login (usuario:admin,pass: 12345)
