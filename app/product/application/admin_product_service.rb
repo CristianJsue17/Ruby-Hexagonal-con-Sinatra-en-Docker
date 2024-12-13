@@ -1,4 +1,5 @@
-class AdminProductService
+require_relative '../domain/ports/input/admin_product_service_interface'
+class AdminProductService < AdminProductServiceInterface
   def initialize(repository)
     @repository = repository
   end

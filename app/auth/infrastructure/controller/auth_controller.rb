@@ -30,18 +30,28 @@ class AuthController < Sinatra::Base
         if currentSession
             redirect '/admin/products/create/new'
         end
-        erb:new
+        if request.cookies['error_message']
+            @error_message = request.cookies['error_message']
+            response.delete_cookie('error_message',path: '/')
+        end
+        erb :new
     end
 
     post '/login' do
         username = params[:username]
         password = params[:password]
-        user = @service.login(username,password)      
+        user = @service.login(username,password)
+        puts "/////////////el usuario encontrodo es: #{user}"
         if user
             # session[:user] = user
             session[:user_id] = user[:id]
             redirect '/admin/products/create/new'
         else
+            response.set_cookie('error_message',{
+              value: 'Invalid credentials',
+              path: '/',
+              max_age: '3600'
+            })
             redirect '/login/new'
         end
     end
@@ -50,6 +60,4 @@ class AuthController < Sinatra::Base
         user = session[:user_id]
         json({message: user})
     end
-
-    
 end

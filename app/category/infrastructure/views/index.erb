@@ -2,15 +2,12 @@
     
     <% if @products.present? %>
         <h2><%= @products.first["category"].capitalize || "Productos" %> - Lista de Productos</h2>
-    <div class="product-grid">
-
+      <div class="product-grid">
             <% @products.each do |product| %>
-
                 <div class="product-card">
                     <h3> 
                         <a href="/products/show/<%= product["id"] %>"><%= product["name"] %></a> 
                     </h3>
-
                     <% if product["image"] %>
                         <a href="/products/<%= product["id"] %>">
                             <img src="<%= product["image"]["url"]%>" alt="Imagen de <%= product["name"] %>" class="product-image">
@@ -26,9 +23,11 @@
                     <a href="/products/show/<%= product["id"] %>" class="view-details-button">Ver detalles</a> 
                 </div>
             <% end %>
-
-    </div>
+      </div>
     <% else %>
         <p>no hay productos</p>
+       <% if @message %>
+          <p><%= @message %></p>
+       <% end %>
     <% end %>
 </div>

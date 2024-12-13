@@ -1,5 +1,5 @@
 require_relative '../entities/product'
-require_relative '../../../domain/product_repository'
+require_relative '../../../domain/ports/output/product_repository_interface'
 
 class ProductRepository_pg < ProductRepository
     def initialize

@@ -1,5 +1,5 @@
 require_relative '../entities/auth'
-require_relative '../../../domain/auth_repository'
+require_relative '../../../domain/ports/output/auth_repository_interface'
 
 class AuthRepository_pg < AuthRepository
     def initialize

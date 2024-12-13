@@ -1,4 +1,6 @@
-class ProductService
+# require_relative '../domain/auth'
+require_relative '../domain/ports/input/product_service_interface'
+class ProductService < ProductServiceInterface
   def initialize(repository)
     @repository = repository
   end
