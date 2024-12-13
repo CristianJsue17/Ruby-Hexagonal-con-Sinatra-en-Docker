@@ -19,6 +19,8 @@
 # production:
 #   <<: *default
 #   database: compufiis_production
+
+# con rails
 development:
   adapter: postgresql
   host: test-fiis-db-1

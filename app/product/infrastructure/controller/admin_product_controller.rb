@@ -87,4 +87,9 @@ class AdminProductController < Sinatra::Base
         @service.delete_product(id)
         json status: 'ok', message: 'Product deleted successfully'
     end
+
+    get '/auth/logout' do
+        session.clear # Limpia todos los datos de la sesión
+        redirect '/' # Redirige al home
+      end
 end

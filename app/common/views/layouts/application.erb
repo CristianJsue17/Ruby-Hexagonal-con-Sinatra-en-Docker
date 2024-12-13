@@ -59,34 +59,34 @@
     </footer>
     <!-- Carrito deslizante -->
     <div id="cart-overlay" class="cart-overlay">
-      <div class="cart-container" id="cart-container">
-        <div class="cart-header">
-          <h2>Carrito de compra</h2>
-          <button class="close-cart" id="close-cart">✕</button>
-        </div>
-        <div class="cart-body">
-          <div id="cart-items" class="cart-items">
-          <!-- Aquí se agregarán los productos del carrito -->
-            <div class="cart-item">
-              <div class="img">
-                <img src="" alt="">
-              </div>
-              <div class="info">
-                <h3>mac m1</h3>
-                <p>$1000</p>
-                <button>eliminar</button>
-              </div>
-            </div>
-            <p id="empty-cart-message">No hay productos en el carrito.</p>
+  <div class="cart-container" id="cart-container">
+    <div class="cart-header d-flex justify-content-between align-items-center">
+      <h2>Carrito de compra</h2>
+      <button class="close-cart" id="close-cart">✕</button>
+    </div>
+    <div class="cart-body">
+      <div id="cart-items" class="cart-items">
+        <!-- Plantilla de producto en el carrito -->
+        <div class="cart-item d-flex align-items-center">
+          <div class="cart-item-image">
+            <img src="/images/foto4.webp" alt="Producto" class="img-fluid">
           </div>
+          <div class="cart-item-info flex-grow-1 px-3">
+            <h5 class="mb-1">Nombre del Producto</h5>
+            <p class="mb-1">S/. 100.00</p>
+          </div>
+          <button class="btn btn-danger">Eliminar</button>
         </div>
-        
-        <div class="cart-footer">
-          <button id="continue-shopping">Seguir comprando</button>
-          <button id="checkout">Finalizar compra</button>
-        </div>
+        <p id="empty-cart-message" class="text-muted text-center mt-3">No hay productos en el carrito.</p>
       </div>
     </div>
+    <div class="cart-footer d-flex flex-column">
+      <button id="continue-shopping" class="btn btn-warning mb-2">Seguir comprando</button>
+      <button id="checkout" class="btn btn-primary">Finalizar compra</button>
+    </div>
+  </div>
+</div>
+
     <script src="/js/main.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@ services:
   # Servicio de aplicación web Rails
   web:
     build: .                        # Construye la imagen usando el Dockerfile en la raíz del proyecto
-    command: entry-point.sh #sh -c "bundle exec rake db:migrate && bundle exec rerun --background -- ruby main.rb"Comando para iniciar la aplicación sinatra
+    command: "bundle exec rerun --background -- ruby main.rb" #"Comando para iniciar la aplicación sinatra
     volumes:
       - .:/usr/src/app              # Monta el código fuente en el contenedor
     ports:

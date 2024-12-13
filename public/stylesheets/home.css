@@ -374,12 +374,12 @@ footer .company-info a:hover {
     z-index: 1000;
   }
   .cart-overlay.open{
-    width: 300px;
+    width: 350px;
   }
   
   .cart-container {
     background-color: #f5f5f5;
-    width: 300px;
+    width: 350px; 
     height: 100vh;
     padding: 20px;
     box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
@@ -399,10 +399,20 @@ footer .company-info a:hover {
   }
   
   .cart-footer {
-
-    bottom: 20px;
-    width: 100%;
+    margin-top: 1.5rem; /* Añade espacio superior para bajar los botones */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espacio entre los botones */
   }
+
+  #continue-shopping, #checkout {
+    width: 100%; /* Mantén el ancho completo */
+    padding: 0.8rem; /* Ajusta el padding para un tamaño uniforme */
+    font-size: 1rem; /* Tamaño del texto consistente */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+    /* seccion card body*/
   .cart-body {
     flex: 1;
     overflow-y: auto;
@@ -410,32 +420,70 @@ footer .company-info a:hover {
   .cart-body .cart-items{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; /* Mantén el espacio entre los elementos */
+    padding: 0.5rem; /* Añade un padding interno */
+    border-top: 1px solid #ddd; /* Línea divisoria superior */
   }
 
   .cart-body .cart-items .cart-item {
     display: flex;
-    border-bottom: 1px solid #c4c4c4;
-    padding: 1rem 1rem;
+    align-items: center; /* Centra verticalmente el contenido */
+    gap: 1rem; /* Espacio entre la imagen y la información */
+    padding: 0.5rem 0; /* Ajusta el padding interno de cada producto */
+    border-bottom: 1px solid #ddd; /* Línea de separación entre productos */
+    /*background-color: transparent; /* Quita el fondo blanco */
+    /*border-radius: 8px; /* Bordes redondeados */
+    box-shadow: none; /* Sombra para resaltar */
+    /*border-radius: 0;*/
+    justify-content: space-between; /* Elimina espacio sobrante */
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
   }
+
   .cart-body .cart-items .cart-item .img{
-    display: flex;
-    align-items: center;
+    max-width: 1000px; /* Reduce el tamaño de la imagen */
+    height: auto;
+    border-radius: 4px; /* Bordes redondeados */
   }
+
   .cart-body .cart-items .cart-item .info{
-    flex-grow: 1;
-    text-align: right;
+    margin: 0;
+    text-align: right; /* Alinea el precio y cantidad a la derecha */
+    color: #666;
+    font-size: 0.9rem;
   }
+
   .cart-body .cart-items .cart-item .info h3{
-    text-align: right;
+    margin-bottom: 0.2rem; /* Reduce el espacio inferior del título */
+    font-size: 1rem; /* Ajusta el tamaño del título */
+    color: black; /* Mantén el color negro */
   }
+
+  .cart-body .cart-items .cart-item .info p {
+    margin: 0; /* Elimina márgenes extra */
+    text-align: right; /* Alinea el precio y la cantidad a la derecha */
+    font-size: 0.9rem; /* Ajusta el tamaño del texto */
+    color: #666;
+}
+
   .cart-body .cart-items .cart-item .info button{
-    background: #ff0000;
+    background: #ff4d4d; /* Mantén el color rojo */
     border: none;
-    padding: .5rem 1rem;
+    padding: 0.3rem 0.7rem; /* Reduce el tamaño del botón */
     border-radius: 4px;
     color: white;
+    font-size: 0.8rem; /* Ajusta el tamaño de la fuente */
+    cursor: pointer;
+    
   }
+
+  .cart-header h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+    font-weight: bold; /* Mantén el peso del texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    }
+
+
   .cart-body .cart-items .cart-item img{
     max-width: 100px;
   }

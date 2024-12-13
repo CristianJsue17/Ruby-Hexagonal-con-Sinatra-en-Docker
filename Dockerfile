@@ -21,12 +21,14 @@ RUN bundle install
 # Copia el resto del código de la aplicación al contenedor
 COPY . /usr/src/app
 
-# Expone el puerto 3000 para la aplicación Rails
+#COPY entry-point.sh /usr/bin/
+#RUN chmod +x /usr/bin/entry-point.sh
+#ENTRYPOINT ["entry-point.sh"]
+
+# Expone el puerto 3000 para la aplicación 
+EXPOSE 3000
 
 
-# Comando para iniciar el servidor de Rails
-#CMD ["rails", "server", "-b", "0.0.0.0"]
-#CMD ["rake","db:migrate"]
 
 # 4. Crear un proyecto
 #    rails new .
@@ -40,10 +42,8 @@ COPY . /usr/src/app
 # 8. Permisos git en proyecto
 #   sudo chown -R $(whoami):$(whoami) .
 
-#   docker exec -it proyecto_ruby_arq-web-1 bash
+#   docker exec -it test-fiis-web-1 bash
 #   docker exec -it proyecto_ruby_arq-db-1 bash
-COPY entry-point.sh /usr/bin/
-RUN chmod +x /usr/bin/entry-point.sh
-ENTRYPOINT ["entry-point.sh"]
 
-EXPOSE 3000
+
+

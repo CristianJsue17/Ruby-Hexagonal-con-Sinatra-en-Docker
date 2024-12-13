@@ -7,7 +7,8 @@ class HomeController < Sinatra::Base
     
     configure do
         set :module_views, File.expand_path('../../views', __FILE__)
-        set :common_views, File.expand_path('../../../../common/views', __FILE__)
+        set :common_views, File.expand_path('../../../../common/views', __FILE__) #jala el comon views
+
     end
 
     helpers do

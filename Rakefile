@@ -1,6 +1,9 @@
 # require 'active_record'
 # require 'rake'
 
+require 'sinatra/activerecord/rake' #ubicacion archivo rake
+require './main'  # tu archivo principal de la aplicación
+
 # namespace :db do
 #   desc 'Migrate the database'
 #   task :migrate => :environment do
@@ -21,5 +24,3 @@
 #   end
 # end
 
-require 'sinatra/activerecord/rake'
-require './main'  # tu archivo principal de la aplicación

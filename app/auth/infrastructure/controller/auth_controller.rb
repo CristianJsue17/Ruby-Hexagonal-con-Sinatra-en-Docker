@@ -50,4 +50,6 @@ class AuthController < Sinatra::Base
         user = session[:user_id]
         json({message: user})
     end
+
+    
 end

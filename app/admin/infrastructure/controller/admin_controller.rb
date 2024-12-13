@@ -87,3 +87,5 @@ class AdminController < Sinatra::Base
         "hello world"
     end
 end
+
+#controladores admin
