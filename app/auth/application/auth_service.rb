@@ -2,7 +2,7 @@ require_relative '../domain/auth'
 require_relative '../domain/ports/input/auth_service_interface'
 # require_relative '../domain/product_repository'
 
-class AuthService < AuthServiceInterface
+class AuthService < AuthServiceInterface  #adaptador, casos uso
   def initialize(repository)
     @repository = repository
     @auth = Auth.new

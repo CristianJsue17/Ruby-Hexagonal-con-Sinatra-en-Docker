@@ -3,7 +3,7 @@ require 'sinatra/json'
 # require_relative '../../application/product_service'
 # require_relative '../persistence/repositories/product_repository_pg'
 
-class AuthController < Sinatra::Base
+class AuthController < Sinatra::Base   #todo ageno al core negocio, xq pertenece al framework
     
     configure do
         set :module_views, File.expand_path('../../views', __FILE__)

@@ -1,4 +1,4 @@
-class Auth
+class Auth   #core de negocio, solo logica nd de DB
 
 
   def initialize

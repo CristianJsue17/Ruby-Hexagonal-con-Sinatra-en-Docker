@@ -9,7 +9,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Opcional: Puedes añadir validaciones de archivos
   def extension_allowlist
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png avif webp)
   end
 
   # Opcional: Límite de tamaño de archivo

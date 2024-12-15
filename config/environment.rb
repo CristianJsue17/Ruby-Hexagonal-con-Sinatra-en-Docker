@@ -31,6 +31,7 @@ require_relative '../app/product/infrastructure/controller/product_controller'
 require_relative '../app/product/application/product_service'
 require_relative '../app/product/infrastructure/persistence/repositories/product_repository_pg'
 #app/product/infrastructure/persistence/repositories
+
 # repositorios
 product_repository = ProductRepository_pg.new
 # servicios
@@ -48,5 +49,5 @@ auth_service = AuthService.new(auth_repository)
 use HomeController
 use CategoryController
 use AdminProductController, product_service
-use ProductController, product_service
+use ProductController, product_service #injeccion dependencias
 use AuthController, auth_service
